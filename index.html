@@ -82,10 +82,13 @@
         <button id="proposalButton">click me.. </button>
         <div id="proposalMessage" class="hidden">apke liye.. 💖</div>
         <img id="engagementImage" src="my_bacha.webp" alt="Engagement" class="hidden">
+        <audio id="backgroundMusic" src="music.mp3" preload="auto"></audio>
     </div>
-    <script>document.getElementById('proposalButton').addEventListener('click', function () {
+    <script>
+        document.getElementById('proposalButton').addEventListener('click', function () {
             const message = document.getElementById('proposalMessage');
             const image = document.getElementById('engagementImage');
+            const music = document.getElementById('backgroundMusic');
 
             // Show the proposal message
             message.classList.remove('hidden');
@@ -96,6 +99,11 @@
                 image.classList.remove('hidden');
                 image.style.opacity = 1;
             }, 500); // Adjust the delay as needed
+
+            // Play the music
+            music.play().catch(error => {
+                console.error("Error playing music:", error);
+            });
         });</script>
 </body>
 
