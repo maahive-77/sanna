@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #69aeeb;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            /* Remove default margin */
+        }
+
+        .container {
+            position: relative;
+            padding: 20px;
+            /* Add some padding */
+            max-width: 400px;
+            /* Limit the width for larger screens */
+            width: 100%;
+            /* Make it responsive */
+        }
+
+
+        #proposalMessage {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #ff69b4;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #engagementImage {
+            margin-top: 20px;
+            width: 100%;
+            /* Make the image responsive */
+            height: auto;
+            /* Maintain aspect ratio */
+            max-width: 300px;
+            /* Limit the maximum width */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .heart {
+                width: 80px;
+                /* Smaller heart for mobile */
+                height: 80px;
+            }
+
+            #proposalMessage {
+                font-size: 20px;
+                /* Smaller font size for mobile */
+            }
+
+            #engagementImage {
+                max-width: 200px;
+                /* Smaller max width for mobile */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heart" id="heart"></div>
+        <h1>love you my bacha😘</h1>
+        <h1>happy propose day💖</h1>
+        <button id="proposalButton">click me.. </button>
+        <div id="proposalMessage" class="hidden">apke liye.. 💖</div>
+        <img id="engagementImage" src="my_bacha.webp" alt="Engagement" class="hidden">
+    </div>
+    <script>document.getElementById('proposalButton').addEventListener('click', function () {
+            const message = document.getElementById('proposalMessage');
+            const image = document.getElementById('engagementImage');
+
+            // Show the proposal message
+            message.classList.remove('hidden');
+            message.style.opacity = 1;
+
+            // Show the engagement image after a short delay
+            setTimeout(() => {
+                image.classList.remove('hidden');
+                image.style.opacity = 1;
+            }, 500); // Adjust the delay as needed
+        });</script>
+</body>
+
+</html>
